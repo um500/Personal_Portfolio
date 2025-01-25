@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div id="about" className="my-12 lg:my-16 relative">
       {/* Responsive Grid Layout */}
-      <div className=" p-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="p-6 md:p-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         {/* Text Section */}
         <div className="order-2 lg:order-1">
           <p className="mb-12 text-5xl md:text-4xl font-bold text-[#E649A1] uppercase text-center">
@@ -23,7 +23,7 @@ const About = () => {
           {/* Buttons Container */}
           <div className="flex justify-center items-center gap-6">
             <a
-              href="https://drive.google.com/file/d/19MfGm9bQbRSQc8yJX8xHBS-TexwIJem7/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1Je0Idu4B9XLL9KZ9IdZsgvLmqSOtlqbd/view"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,9 +32,11 @@ const About = () => {
               </button>
             </a>
 
-            <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-pink-500 hover:to-purple-500 transition-all duration-300">
-              Contact Me
-            </button>
+           
+              <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-pink-500 hover:to-purple-500 transition-all duration-300">
+                Contact Me
+              </button>
+            
           </div>
         </div>
 
