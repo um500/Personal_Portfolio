@@ -4,8 +4,8 @@ import About from "../components/About";
 import Project from "../components/Project";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
-import Education from "../components/Education"; 
-import Experience from "../components/Experiences"; 
+import Education from "../components/Education";
+import Experience from "../components/Experiences";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import {
@@ -14,8 +14,8 @@ import {
   AiOutlineProject,
   AiOutlineStar,
   AiOutlineMail,
-  AiOutlineBook, 
-  AiOutlineLaptop, 
+  AiOutlineBook,
+  AiOutlineLaptop,
 } from "react-icons/ai";
 
 const Home = () => {
@@ -47,7 +47,7 @@ const Home = () => {
     { id: "Front", label: "It's Me", icon: <AiOutlineHome /> },
     { id: "About", label: "About", icon: <AiOutlineInfoCircle /> },
     { id: "Education", label: "Education", icon: <AiOutlineBook /> },
-    { id: "Experience", label: "Experience", icon: <AiOutlineLaptop /> }, // New Experience item
+    { id: "Experience", label: "Experience", icon: <AiOutlineLaptop /> },
     { id: "Project", label: "Project", icon: <AiOutlineProject /> },
     { id: "Skills", label: "Skills", icon: <AiOutlineStar /> },
     { id: "Contact", label: "Contact", icon: <AiOutlineMail /> },
@@ -55,51 +55,47 @@ const Home = () => {
 
   return (
     <section>
-  <div>
-    {/* Toggle Button for Mobile View */}
-    <button
-      aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-      className="md:hidden fixed top-3 left-3 z-50 bg-[#201E43] text-white p-2 rounded"
-      onClick={() => setIsMenuOpen(!isMenuOpen)}
-    >
-      {isMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-    </button>
+      <div>
+        {/* Toggle Button for Mobile View */}
+        <button
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="md:hidden fixed top-3 left-3 z-50 bg-[#201E43] text-white p-2 rounded"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+        </button>
 
-    {/* Sidebar */}
-    <aside
-      className={`fixed left-0 top-0 h-full w-[200px] bg-[#201E43] border-r pt-10 px-6 transition-transform duration-300 ${
-        isMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
-      }`}
-    >
-      <div className="mb-6 text-center">
-        <h1 className="text-white font-bold text-xl md:text-2xl">UMESH</h1>
-      </div>
-      <ul className="space-y-6 text-[#ffffff] ml-6">
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            onClick={() => {
-              setActiveComponent(item.id);
-              setIsMenuOpen(false);
-            }}
-            className={`cursor-pointer flex items-center space-x-3 ${
-              activeComponent === item.id ? "font-bold text-white" : ""
-            }`}
-          >
-            <span className="text-lg">{item.icon}</span>
-            <span>{item.label}</span>
-          </li>
-        ))}
-      </ul>
-    </aside>
+        {/* Sidebar */}
+        <aside
+          className={`fixed top-0 left-0 h-full w-[200px] bg-[#201E43] border-r pt-10 px-6 z-50 transition-transform duration-300 ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <div className="mb-6 text-center">
+            <h1 className="text-white font-bold text-xl md:text-2xl">UMESH</h1>
+          </div>
+          <ul className="space-y-6 text-[#ffffff] ml-6">
+            {navItems.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => {
+                  setActiveComponent(item.id);
+                  setIsMenuOpen(false);
+                }}
+                className={`cursor-pointer flex items-center space-x-3 ${
+                  activeComponent === item.id ? "font-bold text-white" : ""
+                }`}
+              >
+                <span className="text-lg">{item.icon}</span>
+                <span>{item.label}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
 
-    {/* Main Content */}
-    <main
-      className={` ${
-        isMenuOpen ? "ml-[200px]" : "ml-[0px] md:ml-[200px]"
-      } relative transition-all duration-300`}
-    >
-      <div className="absolute inset-0">
+        {/* Main Content */}
+        <main className="relative">
+          <div className="absolute inset-0">
             {/* Add your background animations here */}
             <div
               className="absolute top-10 left-10 w-[120px] h-[120px] bg-pink-400 
@@ -114,10 +110,6 @@ const Home = () => {
             rounded-full blur-3xl opacity-10 animate-bounce"
             ></div>
             <div
-              className="absolute top-4/1 left-3/1 w-[200px] h-[200px] bg-green-500 
-            rounded-full blur-3xl opacity-10 animate-bounce"
-            ></div>
-            <div
               className="absolute top-10 left-10 w-[120px] h-[120px] bg-red-500 
             rounded-full blur-3xl opacity-10 animate-bounce"
             ></div>
@@ -125,19 +117,11 @@ const Home = () => {
               className="absolute bottom-40 right-[-20] w-[150px] h-[150px] bg-yellow-500 
             rounded-full blur-3xl opacity-10 animate-bounce"
             ></div>
-            <div
-              className="absolute top-1/4 left-1/3 w-[200px] h-[200px] bg-green-500 
-            rounded-full blur-3xl opacity-10 animate-bounce"
-            ></div>
           </div>
-      <div className="absolute inset-0">
-        {/* Add Background Animations */}
+          <div className="relative">{renderComponent()}</div>
+        </main>
       </div>
-      <div className="relative">{renderComponent()}</div>
-    </main>
-  </div>
-</section>
-
+    </section>
   );
 };
 
