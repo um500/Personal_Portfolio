@@ -47,7 +47,7 @@ const Home = () => {
     { id: "Front", label: "It's Me", icon: <AiOutlineHome /> },
     { id: "About", label: "About", icon: <AiOutlineInfoCircle /> },
     { id: "Education", label: "Education", icon: <AiOutlineBook /> },
-    { id: "Experience", label: "Experience", icon: <AiOutlineLaptop /> },
+    { id: "Experience", label: "Experience", icon: <AiOutlineLaptop /> }, // New Experience item
     { id: "Project", label: "Project", icon: <AiOutlineProject /> },
     { id: "Skills", label: "Skills", icon: <AiOutlineStar /> },
     { id: "Contact", label: "Contact", icon: <AiOutlineMail /> },
@@ -67,8 +67,8 @@ const Home = () => {
 
         {/* Sidebar */}
         <aside
-          className={`fixed top-0 left-0 h-full w-[200px] bg-[#201E43] border-r pt-10 px-6 z-50 transition-transform duration-300 ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          className={`fixed left-0 top-0 h-full w-[200px] bg-[#201E43] border-r pt-10 px-6 z-50 transition-transform duration-300 ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
           }`}
         >
           <div className="mb-6 text-center">
@@ -93,8 +93,20 @@ const Home = () => {
           </ul>
         </aside>
 
+        {/* Background Overlay */}
+        {isMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+        )}
+
         {/* Main Content */}
-        <main className="relative">
+        <main
+          className={`relative z-30 ${
+            isMenuOpen ? "ml-[200px]" : "ml-[0px] md:ml-[200px]"
+          } transition-all duration-300`}
+        >
           <div className="absolute inset-0">
             {/* Add your background animations here */}
             <div
@@ -118,6 +130,9 @@ const Home = () => {
             rounded-full blur-3xl opacity-10 animate-bounce"
             ></div>
           </div>
+          <div className="absolute inset-0">
+            {/* Add Background Animations */}
+          </div>
           <div className="relative">{renderComponent()}</div>
         </main>
       </div>
@@ -126,3 +141,4 @@ const Home = () => {
 };
 
 export default Home;
+
