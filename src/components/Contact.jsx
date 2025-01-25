@@ -46,10 +46,6 @@ const Contact = () => {
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="md:text-4xl text-2xl text-[#E649A1] font-bold text-center py-2">Contact</h2>
-          <p className="text-white">
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit.
-          </p>
           <div className="mt-2 w-16 h-1 bg-[#E649A1] mx-auto"></div>
         </div>
 
@@ -66,7 +62,7 @@ const Contact = () => {
                     Address
                   </h3>
                   <p className="text-white">
-                    Kolkata, West Bengal, 72xx57, India
+                    Kolkata, West Bengal, 720257, India
                   </p>
                 </div>
               </li>
@@ -78,7 +74,7 @@ const Contact = () => {
                   <h3 className="text-lg text-[#E649A1] font-semibold">
                     Call Me
                   </h3>
-                  <p className="text-white">+91 896ABCD707</p>
+                  <p className="text-white">+91 8969457707</p>
                 </div>
               </li>
               <li className="flex items-center">
@@ -89,7 +85,7 @@ const Contact = () => {
                   <h3 className="text-lg text-[#E649A1] font-semibold">
                     Email Me
                   </h3>
-                  <p className="text-white">rajumesh@example.com</p>
+                  <p className="text-white">rajumesh8969457707@gmail.com</p>
                 </div>
               </li>
             </ul>
